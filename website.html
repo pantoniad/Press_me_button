@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press Me Page</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #87CEFA; /* Light blue background color */
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 16px;
+      background-color: lightpink;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for the button */
+      transition: transform 0.1s ease-in-out; /* Transition effect for the button */
+    }
+
+    button:active {
+      transform: scale(0.95); /* Scale down the button when it's pressed */
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .heart-svg {
+      width: 50px;
+      fill: white;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<img class="heart-svg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 14.25 2 11.45 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 2.95-3.4 5.75-8.55 11.54L12 21.35z'/%3E%3C/svg%3E" alt="Heart Icon">
+
+<button id="pressMeButton">Hi! Press me</button>
+
+<img class="heart-svg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 14.25 2 11.45 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 2.95-3.4 5.75-8.55 11.54L12 21.35z'/%3E%3C/svg%3E" alt="Heart Icon">
+
+<footer>Fully made with love by ChatGPT and Panos &lt;3</footer>
+
+<script>
+  let pressCount = 0;
+
+  function pressButton() {
+    pressCount++;
+
+    if (pressCount === 20) {
+      showConfetti();
+    } else if (pressCount >= 10 && pressCount < 20) {
+      document.getElementById('pressMeButton').innerText = 'A little more!!';
+    }
+  }
+
+  function showConfetti() {
+    // Add your confetti animation logic here
+    alert("Confetti time!");
+
+    // Reset the counter
+    pressCount = 0;
+    document.getElementById('pressMeButton').innerText = 'Hi! Press me';
+  }
+
+  document.getElementById('pressMeButton').addEventListener('click', pressButton);
+</script>
+
+</body>
+</html>
